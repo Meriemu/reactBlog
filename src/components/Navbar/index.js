@@ -12,28 +12,29 @@ import {
   NavBtnLink
 } from "./NavbarElements";
 
-const index = () => {
+const Navbar = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">dolla</NavLogo>
-          <MobileIcon>
+          
+          <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
 
           <NavMenu>
             <NavItem>
-              <NavLinks too="about"> ABout </NavLinks>
+              <NavLinks to="about"> ABout </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks too="discover"> Discover </NavLinks>
+              <NavLinks to="discover"> Discover </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks too="services"> Services </NavLinks>
+              <NavLinks to="services"> Services </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks too="Signup"> Sign Up </NavLinks>
+              <NavLinks to="Signup"> Sign Up </NavLinks>
             </NavItem>
           </NavMenu>
 
@@ -48,4 +49,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Navbar;
