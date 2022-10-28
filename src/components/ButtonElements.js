@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { FaTimes } from 'react-icons/fa'
 import { Link as LinkScroll} from 'react-scroll'
  
 export const Button = styled(LinkScroll)`
@@ -7,7 +6,7 @@ export const Button = styled(LinkScroll)`
     background: ${({primary}) => (primary ? "#01BF71" : "#010606")};
     white-space: nowrap;
     padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
-    color: ${({dark}) => ( dark ? '#010606' : '#FFF')};
+    color: ${({darkColorBtn}) => ( darkColorBtn ? '#010606' : '#FFF')};
     font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
     outline: none;
     border: none;

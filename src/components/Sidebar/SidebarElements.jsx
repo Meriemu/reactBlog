@@ -12,7 +12,7 @@ export const SidebarContainer = styled.aside`
   align-items: center;
   top: 0;
   left: 0;
-  transition: all .3s ease-in-out;
+  transition: .3s ease-in-out;
   z-index: 999;
   opacity: ${({isOpen }) => (isOpen ? '100%' : '0')};
   top: ${({isOpen }) => (isOpen ? '0' : '-100%')};
@@ -52,13 +52,13 @@ export const SidebarLink = styled(LinkScroll)`
    font-size: 1.5rem;
    text-decoration: none;
    list-style: none;
-   transition: all .2s ease-in-out;
+   transition: .2s ease-in-out;
    color: #fff;
    cursor: pointer;
 
    &:hover {
       color: #01bf71;
-      transition: all .2 ease-in-out;
+      transition: .2s ease-in-out;
    }
 `
 export const SideBtnWrap = styled.div`

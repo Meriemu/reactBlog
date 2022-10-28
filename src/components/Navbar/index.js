@@ -34,13 +34,13 @@ const Navbar = ({ toggle }) => {
               <NavLinks to="services"> Services </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="Signup"> Sign Up </NavLinks>
+              <NavLinks to="signup"> Sign Up </NavLinks>
             </NavItem>
           </NavMenu>
 
           <NavBtn>
             <NavBtnLink to="/signin">
-               Sign In
+               Sign In Nav
             </NavBtnLink>
           </NavBtn>
         </NavbarContainer>

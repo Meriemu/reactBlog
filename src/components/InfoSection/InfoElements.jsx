@@ -3,16 +3,16 @@ import styled from 'styled-components';
 
 export const InfoContainer  = styled.div`
    color: #FFF;
-   background: ${({lightBg}) => (lightBg ? "#F9F9F9" : "#010606")};
+   background: ${({ lightBg }) => (lightBg ? "#F9F9F9" : "#010606")};
 
-   @media screen and (max-width: 768px) {
-       padding: 100px 0;
-   }
+   /* @media screen and (max-width: 768px) { */
+       padding: 50px 0;
+   /* } */
 `
 export const InfoWrapper  = styled.div`
    display: grid;
    z-index: 1;
-   height: 860px;
+   /* height: 860px; */
    width: 100%;
    max-width: 1100px;
    margin-right: auto;
@@ -23,13 +23,13 @@ export const InfoWrapper  = styled.div`
 
 export const InfoRow  = styled.div`
     display: grid;
-    grid-auto-columns: minmax(auto, ifr); 
-    align-items: center; grid-template-areas: 
-    ${({imgStart}) => (imgStart ? `'col2 coll'`: `'coli col2'`)};
+    grid-auto-columns: minmax(auto, 1fr); 
+    align-items: center; 
+    grid-template-areas: ${({imgStart}) => imgStart ? `'col2 col1'` : `'col1 col2'`};
     
     @media screen and (max-width: 768px) {
-        grid-template-areas: ${({imgStart}) => (imgStart ? `'coll' 'col2'`
-         : `'coll coll' 'col2 col2'`)}
+        grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'`
+         : `'col1 col1' 'col2 col2'`)}
     }
 `
 
@@ -47,7 +47,12 @@ export const Column2  = styled.div`
 export const TextWrapper  = styled.div`
     max-width: 540px;
     padding-top: 0;
-    padding-bottom: 60px;
+
+    
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      padding-bottom: 60px;
+    }
 `
 export const TopLine  = styled.div`
    color: #1B1F71;
