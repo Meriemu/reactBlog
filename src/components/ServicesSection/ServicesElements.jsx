@@ -27,12 +27,12 @@ export const ServcesWrapper = styled.div`
    padding: 0 50px;
 
     @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
-    @media screen and (max-width: 500px) {
+    /* @media screen and (max-width: 500px) {
         grid-template-columns:  1fr;
         padding: 0 20px;
-    }
+    } */
 `
 
 export const ServicesCard = styled.div`

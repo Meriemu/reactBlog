@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link  as LinkRouter} from 'react-router-dom'
+import { animateScroll as scroll } from "react-scroll";
 
 import {
     FooterContainer,
@@ -25,6 +25,10 @@ import {
     FaLinkedin
 } from 'react-icons/fa'
 const Footer = () => {
+    
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  }
   return (
     <FooterContainer>
         <FooterWrap>
@@ -71,7 +75,7 @@ const Footer = () => {
 
             <SocialMedia>
                     <SocialMediaWrap>
-                        <SocialLogo to='/'>
+                        <SocialLogo to='/' onClick={toggleHome}>
                             MeryLogo
                         </SocialLogo>
                         <WebsiteRights> Mery @{ new Date().getFullYear()}
