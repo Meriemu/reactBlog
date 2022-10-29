@@ -26,7 +26,7 @@ const HeroSection = () => {
 		<HeroContent>
 			<HeroH1>  Virtual Banking Made Easy</HeroH1>	
 			<HeroP>
-				Sign up for a new account today and receine 0$ :D
+				Sign up for a new account today and receive 0$ :D
 			</HeroP>
 			<HeroBtnWrapper>
 				<Button to="signup" 

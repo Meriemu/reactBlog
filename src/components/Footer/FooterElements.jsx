@@ -89,6 +89,11 @@ export const SocialLogo = styled(LinkRouter)`
     margin-bottom: 16px;
     font-weight: bold;
 `
+export const LogoImg = styled.img`
+    color: #FFF;
+    width: 50px;
+    height: 50px;
+`
 export const WebsiteRights = styled.small`
     color: #FFF;
     margin-bottom: 16px;

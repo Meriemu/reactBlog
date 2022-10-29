@@ -1,5 +1,6 @@
 import React from 'react'
 import { animateScroll as scroll } from "react-scroll";
+import Logo from '../../images/Logo_Merach.png';
 
 import {
     FooterContainer,
@@ -14,7 +15,8 @@ import {
     SocialIcons,
     SocialLogo,
     SocialMedia,
-    SocialMediaWrap
+    SocialMediaWrap,
+    LogoImg
 } from './FooterElements';
 
 import {
@@ -76,9 +78,9 @@ const Footer = () => {
             <SocialMedia>
                     <SocialMediaWrap>
                         <SocialLogo to='/' onClick={toggleHome}>
-                            MeryLogo
+                            <LogoImg src={Logo} alt="logo" />
                         </SocialLogo>
-                        <WebsiteRights> Mery @{ new Date().getFullYear()}
+                        <WebsiteRights> Mery ACHEMLAL @{ new Date().getFullYear()}&nbsp;
                             All rights reserved.
                         </WebsiteRights>
                         <SocialIcons>

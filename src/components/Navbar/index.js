@@ -36,7 +36,7 @@ const Navbar = ({ toggle }) => {
       <IconContext.Provider value={{ color: '' }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            <NavLogo to="/" onClick={toggleHome}>dolla</NavLogo>
+            <NavLogo to="/" onClick={toggleHome}>Merach</NavLogo>
             
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -51,7 +51,7 @@ const Navbar = ({ toggle }) => {
                   exact='true'
                   offset={-80}
                   // activeClass="active"
-                > ABout </NavLinks>
+                > About </NavLinks>
               </NavItem>
               <NavItem>
                 <NavLinks to="discover"
@@ -84,7 +84,7 @@ const Navbar = ({ toggle }) => {
 
             <NavBtn>
               <NavBtnLink to="/signin">
-                Sign In Nav
+                Sign In
               </NavBtnLink>
             </NavBtn>
           </NavbarContainer>
