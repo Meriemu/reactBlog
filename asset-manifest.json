@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/reactBlog/static/css/main.d7da34c1.css",
-    "main.js": "/reactBlog/static/js/main.466ff71b.js",
-    "static/media/video.mp4": "/reactBlog/static/media/video.749b1c2b611fd961573a.mp4",
-    "static/media/Logo_Merach.png": "/reactBlog/static/media/Logo_Merach.0d38d76ec03e206f67a1.png",
-    "static/media/svg-2.svg": "/reactBlog/static/media/svg-2.aebb3cab720d11b930975d306c020aaa.svg",
-    "static/media/svg-1.svg": "/reactBlog/static/media/svg-1.c2915c001173201c116a6d7bf155700b.svg",
-    "static/media/svg-3.svg": "/reactBlog/static/media/svg-3.21f2533ea72286fa326a412e76f51921.svg",
-    "index.html": "/reactBlog/index.html",
-    "main.d7da34c1.css.map": "/reactBlog/static/css/main.d7da34c1.css.map",
-    "main.466ff71b.js.map": "/reactBlog/static/js/main.466ff71b.js.map"
+    "main.css": "/reactjsBlog/static/css/main.d7da34c1.css",
+    "main.js": "/reactjsBlog/static/js/main.c5b1796f.js",
+    "static/media/video.mp4": "/reactjsBlog/static/media/video.749b1c2b611fd961573a.mp4",
+    "static/media/Logo_Merach.png": "/reactjsBlog/static/media/Logo_Merach.0d38d76ec03e206f67a1.png",
+    "static/media/svg-2.svg": "/reactjsBlog/static/media/svg-2.aebb3cab720d11b930975d306c020aaa.svg",
+    "static/media/svg-1.svg": "/reactjsBlog/static/media/svg-1.c2915c001173201c116a6d7bf155700b.svg",
+    "static/media/svg-3.svg": "/reactjsBlog/static/media/svg-3.21f2533ea72286fa326a412e76f51921.svg",
+    "index.html": "/reactjsBlog/index.html",
+    "main.d7da34c1.css.map": "/reactjsBlog/static/css/main.d7da34c1.css.map",
+    "main.c5b1796f.js.map": "/reactjsBlog/static/js/main.c5b1796f.js.map"
   },
   "entrypoints": [
     "static/css/main.d7da34c1.css",
-    "static/js/main.466ff71b.js"
+    "static/js/main.c5b1796f.js"
   ]
 }
