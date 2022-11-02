@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/reactjsBlog/static/css/main.d7da34c1.css",
-    "main.js": "/reactjsBlog/static/js/main.b9f6b847.js",
+    "main.js": "/reactjsBlog/static/js/main.b2eea416.js",
     "static/media/video.mp4": "/reactjsBlog/static/media/video.749b1c2b611fd961573a.mp4",
     "static/media/Logo_Merach.png": "/reactjsBlog/static/media/Logo_Merach.0d38d76ec03e206f67a1.png",
     "static/media/svg-2.svg": "/reactjsBlog/static/media/svg-2.aebb3cab720d11b930975d306c020aaa.svg",
@@ -9,10 +9,10 @@
     "static/media/svg-3.svg": "/reactjsBlog/static/media/svg-3.21f2533ea72286fa326a412e76f51921.svg",
     "index.html": "/reactjsBlog/index.html",
     "main.d7da34c1.css.map": "/reactjsBlog/static/css/main.d7da34c1.css.map",
-    "main.b9f6b847.js.map": "/reactjsBlog/static/js/main.b9f6b847.js.map"
+    "main.b2eea416.js.map": "/reactjsBlog/static/js/main.b2eea416.js.map"
   },
   "entrypoints": [
     "static/css/main.d7da34c1.css",
-    "static/js/main.b9f6b847.js"
+    "static/js/main.b2eea416.js"
   ]
 }
