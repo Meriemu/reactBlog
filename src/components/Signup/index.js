@@ -11,15 +11,13 @@ import {
   FormLabel,
   FormInput,
   FormButton,
-  FormLinkForgot,
-  FormLinkNoAccount,
-} from "./SigninElements";
+} from "../Signin/SigninElements";
 
 import { UserContext } from "../../context/userContext";
 
 import { useNavigate } from 'react-router-dom';
 
-const SignIn = () => {
+const SignUp = () => {
   const btnRef = useRef(null);
   const inputs = useRef([]);
 
@@ -27,12 +25,11 @@ const SignIn = () => {
 
   const [emailSize, setEmailSize] = useState(null);
   const [pwdSize, setPwdSize] = useState(null);
-  const [btnText, setBtnText] = useState(false);
 
   
-  const { signIn } = useContext(UserContext);
+  const { signUp } = useContext(UserContext);
   const [validation, setValidation] = useState("");
-
+  
   const navigate = useNavigate();
 
   const addInputs = (el) => {
@@ -44,88 +41,91 @@ const SignIn = () => {
   const handleEmail = (e) => { 
     setEmailSize(inputs.current[0].value.length);
   }
-
   const handlePwd = () => {
     //  console.log("email : ",  inputs.current[0].value.length)
     setPwdSize(inputs.current[1].value.length)
     // console.log(pwdSize)
   }
-
   useEffect(() => {
     if (btnRef) {
       handleEmail();
       handlePwd();
       // console.log("size email: ", emailSize)
       // console.log("size pwd: ", pwdSize)
-      ["mouseover"].forEach(function (e) {
-
-        if ((emailSize || pwdSize) < 6) {
-          const animateMove = (element, prop, pixels) =>
-          anime({
-            targets: element,
-            [prop]: `${pixels}px`,
-            easing: "easeOutCirc",
-          });
-    
-          const getRandomNumber = (num) => {
-            return Math.floor(Math.random() * (num + 1));
-          };
-          btnRef.current.addEventListener(e, function (event) {
-            const top = getRandomNumber(
-              this.parentElement.offsetHeight - this.offsetHeight - 1
-            );
-            const left = getRandomNumber(
-              this.parentElement.offsetWidth - this.offsetWidth - 1
-            );
-
-            animateMove(this, "left", left).play();
-            animateMove(this, "top", top).play();
-          });
-        }
-        else if ((emailSize && pwdSize) > 6) {
-          setBtnText(true)
-          const animateMove = (element, prop, pixels) =>
-          anime({
-            targets: element,
-            [prop]: `${pixels}px`,
-            easing: "easeOutCirc",
-          });
-     
-          btnRef.current.addEventListener(e, function (event) {
-            const top = this.parentElement.offsetHeight  
-            const left = this.parentElement.offsetWidth / 2 
-
-            animateMove(this, "left", left).play();
-            animateMove(this, "top", top).play();
-          }); 
-        }
+      const animateMove = (element, prop, pixels) =>
+      anime({
+        targets: element,
+        [prop]: `${pixels}px`,
+        easing: "easeOutCirc",
       });
+
+      const getRandomNumber = (num) => {
+        return Math.floor(Math.random() * (num + 1));
+      };
+        ["mouseover"].forEach(function (e) {
+
+          if ((emailSize || pwdSize) < 6) {
+            btnRef.current.addEventListener(e, function (event) {
+              const top = getRandomNumber(
+                this.parentElement.offsetHeight - this.offsetHeight - 1
+              );
+              const left = getRandomNumber(
+                this.parentElement.offsetWidth - this.offsetWidth - 1
+              );
+
+              animateMove(this, "left", left).play();
+              animateMove(this, "top", top).play();
+            });
+          }
+          else if ((emailSize || pwdSize) > 6) {
+            // console.log("dddddd", btnRef);
+            // animateMove(this, "left", 0).pause();
+            // animateMove(this, "top", 0).pause();
+
+            // console.log("type :", e);
+            if (e === 'mouseover') {
+              animateMove(this, "left", 0).pause();
+              animateMove(this, "top", 0).pause();
+              return ;
+            };
+          }
+        });
     }
   }, [inputs, emailSize, pwdSize]);
 
   
-  const handleForm = async (e)=> {
+
+const handleForm = async (e)=> {
     e.preventDefault();
+    if((inputs.current[1].value.length || inputs.current[2].value.length )< 6) {
+       setValidation("6 chars min");
+       return
+    }
+    else if(inputs.current[1].value !== inputs.current[2].value) {
+       setValidation("pwd do not match");
+       return
+    }
+
+    //21
     try {
-       const cred = await signIn(
+       const cred = await signUp(
           inputs.current[0].value,
           inputs.current[1].value,
        )
        formRef.current.reset();
-       setValidation("CNX DONE ! ");
+       setValidation("DONE");
        navigate("/");
-      //  toggleModals("close");
     }
     catch (err) {
-       // console.log(err)
-       if(err.code === "auth/wrong-password") {
-          setValidation("Wrong password")
+       console.log(err)
+       if(err.code === "auth/invalid-email") {
+          setValidation("Email format invalid")
        }
-       if (err.code === "auth/user-not-found") {
-          setValidation("Email does not exist")
+       if (err.code === "auth/email-already-in-use") {
+          setValidation("Email already used")
        }
     }
- }
+}
 
   return (
     <Container>
@@ -134,9 +134,14 @@ const SignIn = () => {
         <FormContent>
           <Form action="#"  onSubmit={handleForm}  ref={formRef}>
             <FormH1> Sign in to your account </FormH1>
+
             <FormLabel htmlFor="for">Email</FormLabel>
             <FormInput onChange={handleEmail} ref={addInputs} type="email" required />
+
             <FormLabel htmlFor="for">Password</FormLabel>
+            <FormInput onChange={handlePwd} ref={addInputs} type="password" required />
+
+            <FormLabel htmlFor="for">Repeat Password</FormLabel>
             <FormInput onChange={handlePwd} ref={addInputs} type="password" required />
 
             <FormButton
@@ -145,15 +150,10 @@ const SignIn = () => {
               // ref={el => { console.log(el); btnRef.current = el; }}
               ref={btnRef}
               // onMouseEnter={ClickMeIfYouCan}
-              style={{
-                width: btnText && "100%"
-              }}
             >
               {" "}
-              { !btnText ? "essayes encore 🤣" : "Go !😉"}
+              Continue
             </FormButton>
-            <FormLinkForgot href="#"> Forgot password ?</FormLinkForgot>
-            <FormLinkNoAccount to="/signup"> Don't have an account ?  </FormLinkNoAccount>
             <p className="text-danger mt-1"> { validation }</p>
           </Form>
         </FormContent>
@@ -162,4 +162,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

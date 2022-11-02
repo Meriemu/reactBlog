@@ -57,7 +57,7 @@ position: relative;
   z-index: 1;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 45px 32px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 
@@ -108,6 +108,13 @@ top: 100%;
 `;
 
 export const FormLinkForgot = styled.a`
+  text-align: center;
+  margin-top: 50px;
+  color: #fff;
+  font-size: 14px;
+`;
+
+export const FormLinkNoAccount = styled(LinkRouter)`
   text-align: center;
   margin-top: 50px;
   color: #fff;

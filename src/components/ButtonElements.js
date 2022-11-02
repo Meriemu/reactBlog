@@ -6,7 +6,7 @@ export const Button = styled(LinkScroll)`
     background: ${({primary}) => (primary ? "#12343b" : "#c89666")};
     white-space: nowrap;
     padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
-    color: ${({darkColorBtn}) => ( darkColorBtn ? '#FFF' : '#FFF')};
+    color: ${({darkcolorbtn}) => ( darkcolorbtn ? '#FFF' : '#FFF')};
     font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
     outline: none;
     border: none;

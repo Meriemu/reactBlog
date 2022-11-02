@@ -11,7 +11,7 @@ export const homeObjOne = {
     imgStart: false,
     img: require('../../images/svg-1.svg').default,
     alt: 'Car',
-    darkColorBtn: true,
+    darkcolorbtn: true,
     primary: true,
 };
 
@@ -28,7 +28,7 @@ export const homeObjTwo = {
     imgStart: true,
     img: require('../../images/svg-2.svg').default,
     alt: 'Car 2',
-    darkColorBtn: false,
+    darkcolorbtn: false,
     primary: false,
 }
 
@@ -45,6 +45,6 @@ export const homeObjThree = {
     imgStart: false,
     img: require('../../images/svg-3.svg').default,
     alt: 'paper',
-    darkColorBtn: false,
+    darkcolorbtn: false,
     primary: false,
 }

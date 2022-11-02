@@ -103,11 +103,69 @@ export const SocialIcons = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 240px;
+    /* width: 240px; */
+    margin-bottom: 16px;
 `
 
 export const SocialIconLink = styled.a`
     color: #FFF;
-    font-size: 24px;
+    font-size: 18px;
+    background: rgba(255,255,255,0.1);
+	
+	transition: transform ease-out 0.1s, background 0.2s;
+    max-width: 50px;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border-radius: 50%;
+    position: relative;
+
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &::after {
+        top: 0;
+        left: 0;
+        padding: 0;
+        z-index: -1;
+        box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    &:hover {
+        background: rgba(255,255,255,0.05);
+        transform: scale(0.93);
+        color: #fff;
+
+        &::after {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-sizing: content-box;
+            animation: sonarEffect 1.3s ease-out 5ms;
+        }
+    }
+
+    @keyframes sonarEffect {
+        0% {
+            opacity: 0.3;
+        }
+        40% {
+            opacity: 0.5;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 5px 5px #3851bc, 0 0 0 5px rgba(255,255,255,0.5);
+        }
+        100% {
+            box-shadow: 0 0 0 5px rgba(255,255,255,1), 0 0 5px 5px #3851bc, 0 0 0 5px rgba(255,255,255,1);
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
 `
 

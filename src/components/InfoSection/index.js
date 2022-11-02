@@ -15,11 +15,10 @@ import { InfoContainer,
 } from './InfoElements';
 
 
-const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, img, alt, primary, darkColorBtn, dark2 }) => {
+const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, img, alt, primary, darkcolorbtn, dark2 }) => {
   return (
     <>
         <InfoContainer lightBg={lightBg} id={id}>
-        <p>{console.log(img)}</p>
             <InfoWrapper>
                 <InfoRow imgStart={imgStart}>
                     <Column1>
@@ -35,7 +34,7 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, dark
                                     exact='true'
                                     offset={-80}
                                     primary={ primary ? 1 : 0}
-                                    darkColorBtn={ darkColorBtn ? 1 : 0}
+                                    darkcolorbtn={ darkcolorbtn ? 1 : 0}
                                     dark2={ dark2 ? 1 : 0}
                                 >{buttonLabel}</Button> 
                             </BtnWrap>
